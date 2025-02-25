@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body class="subpage">
     <header>
-        <img src="assets/header_aboutme.svg" alt="Header About Me">
+        <img src="header_aboutme.svg" alt="Header About Me">
     </header>
     
     <nav>
@@ -21,23 +21,53 @@
     </nav>
     
     <main>
-        <section id="about-me" class="dark-background">
-            <img src="assets/aboutme-x.svg" alt="Angeschrägter Punkt">
-            <img src="assets/aboutme-x_quote.svg" alt="Quote About Me">
+        <section id="about-me" class="dark-background" style="transition: opacity 0.5s ease-in-out;">
+            <img src="about-quote.svg" alt="About Quote" style="width: 750px; position: absolute; left: 140px; bottom: 140px;">
             <div class="parallax-container">
-                <img src="assets/aboutme_abroad.svg" class="parallax-item" alt="Abroad">
-                <img src="assets/aboutme_design.svg" class="parallax-item" alt="Design">
-                <img src="assets/aboutme_goal.svg" class="parallax-item" alt="Goal">
-                <img src="assets/aboutme_reisen.svg" class="parallax-item" alt="Reisen">
-                <img src="assets/aboutme_spain.svg" class="parallax-item" alt="Spain">
-                <img src="assets/aboutme_sprache.svg" class="parallax-item" alt="Sprache">
+                <div class="hover-image">
+                    <img src="aboutme_abroad.svg" class="parallax-item default-img" alt="Abroad">
+                    <img src="aboutme_abroad_quote.svg" class="parallax-item hover-img" alt="Abroad Quote">
+                </div>
+                <div class="hover-image">
+                    <img src="aboutme_design.svg" class="parallax-item default-img" alt="Design">
+                    <img src="aboutme_design_quote.svg" class="parallax-item hover-img" alt="Design Quote">
+                </div>
+                <div class="hover-image">
+                    <img src="aboutme_goal.svg" class="parallax-item default-img" alt="Goal">
+                    <img src="aboutme_goal_quote.svg" class="parallax-item hover-img" alt="Goal Quote">
+                </div>
+                <div class="hover-image">
+                    <img src="aboutme_reisen.svg" class="parallax-item default-img" alt="Reisen">
+                    <img src="aboutme_reisen_quote.svg" class="parallax-item hover-img" alt="Reisen Quote">
+                </div>
+                <div class="hover-image">
+                    <img src="aboutme_spain.svg" class="parallax-item default-img" alt="Spain">
+                    <img src="aboutme_spain_quote.svg" class="parallax-item hover-img" alt="Spain Quote">
+                </div>
+                <div class="hover-image">
+                    <img src="aboutme_sprache.svg" class="parallax-item default-img" alt="Sprache">
+                    <img src="aboutme_sprache_quote.svg" class="parallax-item hover-img" alt="Sprache Quote">
+                </div>
             </div>
         </section>
     </main>
     
-<footer>
-    <p style="font-family: 'Priego', sans-serif;">&copy; 2025 Julia Anna Büch - Alle Rechte vorbehalten.</p>
-</footer>
-
+    <footer>
+        <p style="font-family: 'Priego', sans-serif;">&copy; 2025 Julia Anna Büch - Alle Rechte vorbehalten.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutMeSection = document.getElementById("about-me");
+            document.querySelectorAll(".hover-image").forEach(imageContainer => {
+                imageContainer.addEventListener("mouseenter", () => {
+                    aboutMeSection.style.opacity = "0.5";
+                });
+                imageContainer.addEventListener("mouseleave", () => {
+                    aboutMeSection.style.opacity = "1";
+                });
+            });
+        });
+    </script>
 </body>
 </html>

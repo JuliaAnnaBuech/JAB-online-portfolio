@@ -6,6 +6,28 @@
     <title>Julia Anna Büch - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        .interactive-element {
+            position: relative;
+            display: inline-block;
+        }
+        .interactive-element img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .interactive-element img#stoerer-click {
+            opacity: 0;
+        }
+        .interactive-element:hover img#stoerer-click {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <header style="position: absolute; top: 140px; left: 140px; width: 582px; height: 162.4px;">
@@ -13,7 +35,7 @@
     </header>
     
     <div class="contact-icons" style="position: absolute; top: 140px; right: 140px; display: flex; align-items: center; width: 140px;">
-        <a href="https://www.linkedin.com/in/julia-anna-b%C3%BCch-8530b5353" target="_blank">
+        <a href="https://www.linkedin.com/in/julia-anna-b%C3%BCch-8530b5353/" target="_blank">
             <img src="linkedin.svg" alt="LinkedIn" style="width: 35px; display: block;">
         </a>
         <div style="width: 27px;"></div>
@@ -24,7 +46,7 @@
         </a>
     </div>
     
-    <nav style="position: absolute; top: calc(140px + 162.4px); right: 140px; font-family: 'Priego', sans-serif; font-size: 35px;">
+    <nav style="position: absolute; top: calc(140px + 162.4px); right: 140px; font-family: 'Priego', sans-serif; font-size: 35px; font-weight: normal;">
         <ul style="display: flex; gap: 40px; list-style: none; padding: 0; margin: 0;">
             <li><a href="aboutme.html" style="text-decoration: none; color: black;">about me</a></li>
             <li><a href="aboutmydesign.html" style="text-decoration: none; color: black;">about my design</a></li>
@@ -34,14 +56,15 @@
     
     <main>
         <section id="landing" class="fullscreen">
-            <div class="interactive-element">
-                <img src="stoerer.svg" alt="Interaktives Element" style="display: block;">
+            <div class="interactive-element" onclick="location.href='aboutme.html'">
+                <img src="stoerer.svg" alt="Interaktives Element">
+                <img src="stoerer_klick.svg" alt="Interaktives Element Aktiv" id="stoerer-click">
             </div>
         </section>
     </main>
-    
+
     <footer>
-        <p>&copy; 2025 Julia Anna Büch - Alle Rechte vorbehalten.</p>
+        <p style="font-family: 'Priego', sans-serif;">&copy; 2025 Julia Anna Büch - Alle Rechte vorbehalten.</p>
     </footer>
 </body>
 </html>

@@ -1,37 +1,90 @@
+/* Allgemeine Stile */
 body {
-    font-family: 'Priego', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Priego', sans-serif;
+    overflow: hidden; /* Verhindert Scrollen auf der Landing Page */
+}
+
+.subpage {
+    overflow: auto; /* Scrollen auf Unterseiten erlaubt */
+}
+
+.dark-background {
+    background-color: black;
+    color: white;
+}
+
+.light-background {
     background-color: white;
-    overflow: hidden; /* Keine Scrollbar auf der Landing Page */
-}
-
-.contact-icons a img {
-    transition: transform 0.3s ease-in-out;
-}
-
-.contact-icons a:hover img {
-    transform: scale(1.1);
-}
-
-nav ul li a {
     color: black;
+}
+
+/* Menü-Stil */
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
     text-decoration: none;
     font-size: 35px;
-    font-family: 'Priego', sans-serif;
+    color: black;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.subpage nav a {
+    color: white;
+} /* Weiße Schriftfarbe für Unterseiten */
+
+/* Parallax Effekt für About Me */
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    background-color: #f0f0f0;
+.parallax-item {
     position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hover-Effekt für About Me Bilder */
+.hover-image {
+    position: relative;
+}
+
+.default-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    bottom: 0;
-    font-family: 'Priego', sans-serif;
+    height: auto;
+    z-index: 1;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.hover-image:hover .hover-img {
+    opacity: 1;
+}
+
+/* Opacity-Reduzierung für About Me */
+#about-me {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hover-image:hover ~ #about-me {
+    opacity: 0.5;
 }
