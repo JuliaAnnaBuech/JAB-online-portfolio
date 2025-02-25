@@ -1,169 +1,37 @@
-/* Einbindung der Priego-Schriftarten */
-@font-face {
-    font-family: 'Priego';
-    src: url('../fonts/Priego-Regular.woff2') format('woff2'),
-         url('../fonts/Priego-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Priego';
-    src: url('../fonts/Priego-Bold.woff2') format('woff2'),
-         url('../fonts/Priego-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-/* Allgemeine Styles */
 body {
     font-family: 'Priego', sans-serif;
     margin: 0;
     padding: 0;
     background-color: white;
+    overflow: hidden; /* Keine Scrollbar auf der Landing Page */
+}
+
+.contact-icons a img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.1);
+}
+
+nav ul li a {
     color: black;
-    overflow: hidden; /* Landing Page bleibt ohne Scrollbar */
-}
-
-/* Scroll aktivieren für Unterseiten */
-body.subpage {
-    overflow: auto;
-}
-
-/* Header Styling */
-header {
-    position: absolute;
-    top: 140px;
-    left: 140px;
-    width: 528px;
-    height: 16.4px;
-}
-
-.contact-icons {
-    position: absolute;
-    top: 140px;
-    right: 140px;
-    display: flex;
-    align-items: center;
-    width: 140px;
-}
-
-.contact-icons img {
-    display: block;
-}
-
-.contact-icons img:first-child {
-    width: 35px;
-    margin-right: 27px;
-}
-
-.contact-icons img:last-child {
-    width: 48px;
-    margin-left: 27px;
-}
-
-.contact-icons div {
-    width: 3px;
-    height: 35px;
-    background-color: black;
-}
-
-/* Landing Page Fixes */
-#landing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    position: relative;
-}
-
-#landing img {
-    display: block;
-    max-width: 100%;
-}
-
-/* About Me Styling */
-#about-me {
-    background-color: black;
-    color: white;
-    position: relative;
-}
-
-#about-me h1 {
-    font-weight: bold;
-    font-size: 35px;
-}
-
-.parallax-container {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-}
-
-.parallax-item {
-    position: absolute;
-    will-change: transform;
-}
-
-/* Navigation Schriftfarben */
-nav a {
     text-decoration: none;
+    font-size: 35px;
+    font-family: 'Priego', sans-serif;
 }
 
-body.subpage nav a {
-    color: white;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-body.index nav a {
-    color: black;
-}
-
-/* Stoerer Styling */
-.stoerer {
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #f0f0f0;
     position: absolute;
-}
-
-.stoerer img {
-    display: block;
-}
-
-/* Bildkomposition Selected Works */
-.fotoblock img:nth-child(1) {
-    width: 330px;
-    height: 305px;
-    position: absolute;
-    left: 3151px;
-    bottom: 3896px;
-}
-
-.fotoblock img:nth-child(2) {
-    width: 301px;
-    height: 251px;
-    position: absolute;
-    left: 3505px;
-    bottom: 3896px;
-}
-
-.fotoblock img:nth-child(3) {
-    width: 440px;
-    height: 305px;
-    position: absolute;
-    left: 3151px;
-    bottom: 4225px;
-}
-
-.fotoblock img:nth-child(4) {
-    width: 280px;
-    height: 340px;
-    position: absolute;
-    left: 3615px;
-    bottom: 4261px;
-}
-
-.fotoblock img:nth-child(5) {
-    width: 744px;
-    height: 670px;
-    position: absolute;
-    left: 3151px;
-    bottom: 4261px;
+    width: 100%;
+    bottom: 0;
+    font-family: 'Priego', sans-serif;
 }
