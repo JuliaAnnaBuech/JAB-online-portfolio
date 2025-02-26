@@ -4,23 +4,39 @@ body {
     padding: 0;
     font-family: 'Priego', sans-serif;
     overflow: hidden; /* Verhindert Scrollen auf der Landing Page */
+    background-color: black; /* Schwarzer Hintergrund für alle Seiten */
+    color: white;
 }
 
 .subpage {
     overflow: auto; /* Scrollen auf Unterseiten erlaubt */
+    background-color: black; /* Schwarzer Hintergrund für Unterseiten */
 }
 
-.dark-background {
-    background-color: black;
-    color: white;
+/* Schriftarten einbinden */
+@font-face {
+    font-family: 'Priego';
+    src: url('Priego-Regular.woff2') format('woff2'),
+         url('Priego-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.light-background {
-    background-color: white;
-    color: black;
+@font-face {
+    font-family: 'Priego';
+    src: url('Priego-Bold.woff2') format('woff2'),
+         url('Priego-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
 
 /* Menü-Stil */
+nav {
+    position: absolute;
+    top: 140px;
+    right: 140px;
+}
+
 nav ul {
     display: flex;
     gap: 40px;
@@ -32,52 +48,31 @@ nav ul {
 nav a {
     text-decoration: none;
     font-size: 35px;
-    color: black;
+    font-family: 'Priego', sans-serif;
+    font-weight: normal;
+    color: white !important;
 }
 
-.subpage nav a {
-    color: white;
-} /* Weiße Schriftfarbe für Unterseiten */
+/* Header-Positionierung */
+header {
+    position: absolute;
+    top: 140px;
+    left: 140px;
+}
 
 /* Parallax Effekt für About Me */
 .parallax-container {
     position: relative;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
 }
 
 .parallax-item {
     position: absolute;
     transition: transform 0.5s ease-in-out;
-}
-
-/* Hover-Effekt für About Me Bilder */
-.hover-image {
-    position: relative;
-}
-
-.default-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 1;
-}
-
-.hover-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 2;
-}
-
-.hover-image:hover .hover-img {
-    opacity: 1;
+    transform: translateZ(-1px) scale(1.2);
 }
 
 /* Opacity-Reduzierung für About Me */
@@ -85,6 +80,20 @@ nav a {
     transition: opacity 0.5s ease-in-out;
 }
 
-.hover-image:hover ~ #about-me {
+.parallax-container:hover ~ #about-me {
     opacity: 0.5;
+}
+
+/* Bild-Anordnung für About Me */
+.aboutme-images {
+    position: absolute;
+    bottom: 140px;
+    left: 140px;
+    display: flex;
+    gap: 20px;
+}
+
+.aboutme-images img {
+    width: auto;
+    height: 300px; /* Einheitliche Bildhöhe */
 }

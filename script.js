@@ -1,74 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Parallax-Effekt für About Me Bilder
-    const parallaxItems = document.querySelectorAll(".parallax-item");
-    window.addEventListener("scroll", function () {
-        let scrollPosition = window.scrollY;
-        parallaxItems.forEach((item, index) => {
-            let speed = (index + 1) * 0.3;
-            item.style.transform = `translateY(${scrollPosition * speed}px)`;
+    // Parallax-Scrolling für About Me
+    const parallaxContainer = document.querySelector(".parallax-container");
+    if (parallaxContainer) {
+        window.addEventListener("scroll", function () {
+            let scrollPosition = window.scrollY;
+            document.querySelectorAll(".hover-image").forEach((image, index) => {
+                image.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+            });
         });
-    });
-
-    // Navigation Farbwechsel je nach Seite
-    const bodyClass = document.body.classList;
-    const navLinks = document.querySelectorAll("nav a");
-    if (bodyClass.contains("subpage")) {
-        navLinks.forEach(link => link.style.color = "white");
-    } else {
-        navLinks.forEach(link => link.style.color = "black");
     }
 
-    // Hover-Interaktion für About Me Bilder
-    document.querySelectorAll(".hover-image").forEach(imageContainer => {
-        const defaultImg = imageContainer.querySelector(".default-img");
-        const hoverImg = imageContainer.querySelector(".hover-img");
-
-        imageContainer.addEventListener("mouseenter", () => {
-            hoverImg.style.opacity = "1";
-            document.getElementById("about-me").style.opacity = "0.5";
-        });
-        imageContainer.addEventListener("mouseleave", () => {
-            hoverImg.style.opacity = "0";
-            document.getElementById("about-me").style.opacity = "1";
-        });
-    });
+    // Smooth-Scrolling für Selected Works
+    const sections = document.querySelectorAll(".categories");
+    if (sections.length > 0) {
+        let currentIndex = 0;
+        document.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            if (event.deltaY > 0 && currentIndex < sections.length - 1) {
+                currentIndex++;
+            } else if (event.deltaY < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            sections[currentIndex].scrollIntoView({ behavior: "smooth" });
+        }, { passive: false });
+    }
 
     // Lightbox für Portfolio-Bilder
-    const portfolioImages = document.querySelectorAll(".categories a");
-    portfolioImages.forEach(link => {
+    document.querySelectorAll(".work-gallery a").forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
-            const imageUrl = this.getAttribute("href");
-            openLightbox(imageUrl);
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            lightbox.innerHTML = `<img src="${this.href}" alt="Portfolio Image">`;
+            document.body.appendChild(lightbox);
+            lightbox.addEventListener("click", () => {
+                lightbox.remove();
+            });
         });
     });
 
-    function openLightbox(imageUrl) {
-        let lightbox = document.createElement("div");
-        lightbox.id = "lightbox";
-        lightbox.style.position = "fixed";
-        lightbox.style.top = "0";
-        lightbox.style.left = "0";
-        lightbox.style.width = "100vw";
-        lightbox.style.height = "100vh";
-        lightbox.style.background = "rgba(0, 0, 0, 0.8)";
-        lightbox.style.display = "flex";
-        lightbox.style.alignItems = "center";
-        lightbox.style.justifyContent = "center";
-        lightbox.style.zIndex = "1000";
-
-        let img = document.createElement("img");
-        img.src = imageUrl;
-        img.style.maxWidth = "90%";
-        img.style.maxHeight = "90%";
-        img.style.border = "5px solid white";
-        img.style.boxShadow = "0 0 20px rgba(255, 255, 255, 0.5)";
-
-        lightbox.appendChild(img);
-        document.body.appendChild(lightbox);
-
-        lightbox.addEventListener("click", function () {
-            document.body.removeChild(lightbox);
+    // Hover-Effekt für Stoerer (Landing Page)
+    const stoererElement = document.querySelector(".interactive-element");
+    if (stoererElement) {
+        stoererElement.addEventListener("mouseenter", () => {
+            document.getElementById("stoerer-click").style.opacity = "1";
+        });
+        stoererElement.addEventListener("mouseleave", () => {
+            document.getElementById("stoerer-click").style.opacity = "0";
         });
     }
 });
