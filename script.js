@@ -7,10 +7,18 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(".hover-image").forEach((image, index) => {
                 image.style.transform = `translateY(${scrollPosition * 0.2}px)`;
             });
+
+            // Opacity-Änderung für Hintergrund, Quote, Navigation und Header
+            const aboutMeSection = document.getElementById("about-me");
+            if (scrollPosition > 50) {
+                aboutMeSection.style.opacity = "0.5";
+            } else {
+                aboutMeSection.style.opacity = "1";
+            }
         });
     }
 
-    // Smooth-Scrolling für Selected Works
+    // Smooth-Scrolling für Selected Works (zwischen Kategorien)
     const sections = document.querySelectorAll(".categories");
     if (sections.length > 0) {
         let currentIndex = 0;
@@ -49,4 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("stoerer-click").style.opacity = "0";
         });
     }
+
+    // Hover-Effekt für About Me Images (Quote-Bilder erscheinen)
+    document.querySelectorAll(".hover-image").forEach(container => {
+        const defaultImg = container.querySelector(".default-img");
+        const hoverImg = container.querySelector(".hover-img");
+
+        container.addEventListener("mouseenter", () => {
+            defaultImg.style.opacity = "0";
+            hoverImg.style.opacity = "1";
+        });
+
+        container.addEventListener("mouseleave", () => {
+            defaultImg.style.opacity = "1";
+            hoverImg.style.opacity = "0";
+        });
+    });
 });

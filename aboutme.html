@@ -6,55 +6,6 @@
     <title>About Me</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <style>
-        #about-me {
-            transition: opacity 0.5s ease-in-out;
-        }
-        .hover-image:hover ~ #about-me {
-            opacity: 0.5;
-        }
-        .aboutme-images img {
-            width: auto;
-            height: 300px;
-        }
-        
-        /* Positionierung der einzelnen Bilder */
-        .aboutme-goal {
-            position: absolute;
-            top: 30px;
-            left: 380px;
-        }
-        .aboutme-abroad {
-            position: absolute;
-            top: 450px;
-            left: 140px;
-        }
-        .aboutme-spain {
-            position: absolute;
-            top: 790px;
-            left: 500px;
-        }
-        .aboutme-design {
-            position: absolute;
-            top: 370px;
-            left: 670px;
-        }
-        .aboutme-sprache {
-            position: absolute;
-            top: 200px;
-            left: 1550px;
-        }
-        .aboutme-philosophie {
-            position: absolute;
-            top: 25px;
-            left: 1090px;
-        }
-        .aboutme-reisen {
-            position: absolute;
-            top: 550px;
-            left: 1230px;
-        }
-    </style>
 </head>
 <body class="subpage dark-background">
     <header>
@@ -68,44 +19,45 @@
             <li><a href="selectedworks.html">Selected Works</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <section id="about-me" class="parallax-container">
             <img src="about-quote.svg" alt="About Quote" class="quote">
             <div class="aboutme-images">
-                <div class="hover-image aboutme-goal">
+                <div class="hover-image" style="top: 30px; left: 380px;">
                     <img src="aboutme_goal.svg" class="default-img" alt="Goal">
                     <img src="aboutme_goal_quote.svg" class="hover-img" alt="Goal Quote">
                 </div>
-                <div class="hover-image aboutme-abroad">
+                <div class="hover-image" style="top: 450px; left: 140px;">
                     <img src="aboutme_abroad.svg" class="default-img" alt="Abroad">
                     <img src="aboutme_abroad_quote.svg" class="hover-img" alt="Abroad Quote">
                 </div>
-                <div class="hover-image aboutme-spain">
+                <div class="hover-image" style="top: 790px; left: 500px;">
                     <img src="aboutme_spain.svg" class="default-img" alt="Spain">
                     <img src="aboutme_spain_quote.svg" class="hover-img" alt="Spain Quote">
                 </div>
-                <div class="hover-image aboutme-design">
+                <div class="hover-image" style="top: 370px; left: 670px;">
                     <img src="aboutme_design.svg" class="default-img" alt="Design">
                     <img src="aboutme_design_quote.svg" class="hover-img" alt="Design Quote">
                 </div>
-                <div class="hover-image aboutme-sprache">
+                <div class="hover-image" style="top: 200px; left: 1550px;">
                     <img src="aboutme_sprache.svg" class="default-img" alt="Sprache">
                     <img src="aboutme_sprache_quote.svg" class="hover-img" alt="Sprache Quote">
                 </div>
-                <div class="hover-image aboutme-philosophie">
+                <div class="hover-image" style="top: 25px; left: 1090px;">
                     <img src="aboutme_philosophie.svg" class="default-img" alt="Philosophie">
                     <img src="aboutme_philosophie_quote.svg" class="hover-img" alt="Philosophie Quote">
                 </div>
-                <div class="hover-image aboutme-reisen">
+                <div class="hover-image" style="top: 550px; left: 1230px;">
                     <img src="aboutme_reisen.svg" class="default-img" alt="Reisen">
                     <img src="aboutme_reisen_quote.svg" class="hover-img" alt="Reisen Quote">
                 </div>
             </div>
         </section>
     </main>
-    
-    <footer style="font-family: 'Priego', sans-serif;">
+
+    <!-- Footer mit Priego sichergestellt -->
+    <footer style="font-family: 'Priego', sans-serif !important;">
         <p>&copy; 2025 Julia Anna Büch - Alle Rechte vorbehalten.</p>
     </footer>
 </body>
