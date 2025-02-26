@@ -1,20 +1,6 @@
 # JAB-online-portfolio
 Ein minimalistisches Portfolio zur Präsentation meiner Arbeiten als Designerin.
 
-## Verzeichnisstruktur
-📁 JAB-Website
-├── 📁 assets # Enthält alle Bilder, SVGs und andere Medien
-├── 📁 css # Enthält alle Stylesheets
-│ ├── styles.css # Haupt-Stylesheet für das Design
-├── 📁 js # Enthält alle Skripte für interaktive Elemente
-│ ├── script.js # Haupt-JavaScript-Datei
-├── 📁 fonts # Enthält alle verwendeten Schriftarten
-├── index.html # Startseite (Landing Page)
-├── aboutme.html # Über-mich-Seite
-├── aboutmydesign.html # Über-Design-Seite
-├── selectedworks.html # Portfolio-Seite
-├── README.md # Diese Datei mit Projektinformationen
-
 ### **3. Installation & Lokaler Server**
 Falls du möchtest, dass jemand das Projekt lokal testet, füge eine Anleitung hinzu:
 
